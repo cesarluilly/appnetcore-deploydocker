@@ -75,31 +75,36 @@ contenedor
 ![containerCreadoDesktop](./imgReadme/containerCreadoDesktop.jpg)
 
 
+Agunos comandos para trabajar con contenedores
+
+- Localiza el nombre o id de los contenedores
+> `docker ps -a`
+
+- Eliminar un contenedor
+> `docker rm ID_or_Name ID_or_Name`
+
+- Detener un contenedor
+> `docker stop {container-id}`
+
+- Levantar un contenedor
+> `docker start {container-id}`
+
+- Si el container o mas bien la aplicacion no llegara a funcionar
+correctamente, hay que buscar mas info en el Log del container,
+por ejemplo, si no se ah establecido bien la conexion, nos los va 
+a indicar en el log y se accede a traves del siguiente comando
+> `docker container logs {container-id}`
+
+
+Vamos a ver que efectivamente nuestro contenedor esta corriendo
+
+![deployContainer](./imgReadme/deployContainer.jpg)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+***
+***
+***
 
 A lo mejor en versiones anteriores se necesite descargar 
 la img sdk 
@@ -142,9 +147,10 @@ WORKDIR /webapp
 COPY --from=build /webapp/out .
 
 # Especificamos cual es el ejecutable
-ENTRYPOINT ["dotnet", "/WebApiAutores.dll"]
+ENTRYPOINT ["dotnet", "/ProjectName.dll"]
 ```
 
+Como recomendacion, hay que crear el Dockerfile desde Visual Studio.
 
 
 
